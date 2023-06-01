@@ -1,4 +1,4 @@
-FROM golang:alpine3.18
+FROM golang:1.13-alpine
 
 RUN apk update && \
     apk add --no-cache --virtual build-dependancies \
