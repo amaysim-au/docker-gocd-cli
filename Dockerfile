@@ -5,7 +5,7 @@ RUN apk update && \
     build-base gcc wget git bash && \
     apk add --no-cache openjdk8 && \
     git clone https://github.com/gocd-contrib/gocd-cli.git && \
-    cd gocd-cli && ./build.sh && \
+    cd gocd-cli && git checkout ab589aed89177ef478caf4aa613c540f1dcebe56 && ./build.sh && \
     mv gocd /usr/local/bin && chmod +x /usr/local/bin/gocd && \
     gocd configrepo --yaml fetch && gocd configrepo --json fetch && \
     apk del build-dependancies && \
