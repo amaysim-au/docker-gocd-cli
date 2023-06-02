@@ -1,0 +1,20 @@
+format_version: 4
+pipelines:
+  docker-gocd-cli:
+    materials:
+      git:
+        type: configrepo
+        auto_update: false
+    group: Test
+    label_template: '${COUNT}-${git[:7]}'
+    locking: off
+    stages:
+      - test:
+          clean_workspace: true
+          jobs:
+            test:
+              tasks:
+                - exec:
+                    command: make
+                    arguments:
+                      - test
