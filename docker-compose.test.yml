@@ -1,0 +1,6 @@
+# Ref: https://docs.docker.com/docker-hub/builds/automated-testing/
+services:
+  sut:
+    build: .
+    entrypoint: sh
+    command: /root/test/run.sh

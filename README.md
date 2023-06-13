@@ -8,4 +8,4 @@ Golang image with Java & GoCD CLI installed.
 
 ## Contributing
 
-Before creating a pull request, run the command `% docker build .`
+Before creating a pull request, run the command `% make test`

@@ -12,9 +12,8 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     rm -rf /var/lib/apt/lists/*
 
-# Testing
-COPY pipeline-test.yml /root/
-RUN gocd configrepo --yaml syntax /root/pipeline-test.yml --debug
+# files for testing image
+COPY test /root/test
 
 ENTRYPOINT ["gocd"]
 CMD ["--version"]
